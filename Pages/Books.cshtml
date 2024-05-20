@@ -1,0 +1,23 @@
+﻿@page
+@model BooksModel
+@{
+	ViewData["Title"] = "Books page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Books</h1>
+	<p>This page about book</p>
+</div>
+<div class="row mt-5 pb-5">
+@{
+	foreach (var book in Model.BooksList())
+	{
+		<div class="col-lg-3">
+		<img class="img-thumbnail"  src ="@book.img" alt="@book.name">
+		<h2>@book.name</h2>
+		<p>Цена: @book.price.ToString("c")</p>
+		<p><a class="btn btn-warning" href="#">Забронировать</a></p>
+		</div>
+	}
+} 
+</div>
